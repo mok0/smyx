@@ -40,6 +40,16 @@
 (deftheme smyx "The smyx color theme")
 
 (let ((class '((class color) (min-colors 89)))
+
+      ;;(mok-highlight "#26a644")  ;; greenish
+      (mok-green "#26a644")
+      (mok-highlight "#c55800")  ;; orangish
+      (mok-gray "#666666")
+      ;;      (mok-org-block "#002E3D")
+      (mok-org-block "#054260")     ;; prussian blue darkened
+      (mok-modeline-active "#555555")
+      (mok-modeline-inactive "#333344")
+
       ;; smyx palette
       (smyx-fg "#F7F7F7")
 
@@ -51,7 +61,7 @@
       (smyx-bg+3 "#585858")
 
       (smyx-red+1 "#992222")
-     (smyx-red "#FAB1AB")
+      (smyx-red "#FAB1AB")
       (smyx-red-1 "#FAB1AB")
       (smyx-red-2 "#FAB1AB")
       (smyx-red-3 "#FAB1AB")
@@ -81,16 +91,16 @@
       (smyx-green+2 "#9fc59f")
       (smyx-green+3 "#afd8af")
       (smyx-green+4 "#bfebbf")
-      (smyx-green-blue-org "#BBFFD1")   
+      (smyx-green-blue-org "#BBFFD1")
 
 
       (smyx-cyan "#96D9F1")
       (smyx-blue+1 "#94bff3")
-      (smyx-blue "#96D9F1")   
+      (smyx-blue "#96D9F1")
       (smyx-blue-1 "#7b68ee")
-      (smyx-blue-2 "#6a5acd") 
-      (smyx-blue-3 "#add8e6") 
-      (smyx-blue-4 "#b2dfee") 
+      (smyx-blue-2 "#6a5acd")
+      (smyx-blue-3 "#add8e6")
+      (smyx-blue-4 "#b2dfee")
       (smyx-blue-5 "#96D9F1")
       (smyx-blue-6 "#96D9F1")
       (smyx-blue-7 "#00ffff")
@@ -116,7 +126,7 @@
       (smyx-white-2 "#F8F8F8")
       (smyx-white-3 "#fffafa"))
 
- (custom-theme-set-faces
+  (custom-theme-set-faces
    'smyx
    '(button ((t (:underline t))))
    `(link ((,class (:foreground ,smyx-yellow :underline t :weight bold))))
@@ -125,7 +135,7 @@
    `(bold ((,class (:bold t))))
    `(bold-italic ((,class (:bold t))))
    `(border-glyph ((,class (nil))))
-   `(buffers-tab ((,class (:background ,smyx-black-2 :foreground ,smyx-white-2))))
+   `(buffers-tab ((,class (:background ,mok-gray :foreground ,smyx-white-2))))
 
    ;;; basic coloring
    `(default ((,class (:foreground ,smyx-fg :background ,smyx-black))))
@@ -135,11 +145,11 @@
    `(header-line ((,class (:foreground ,smyx-yellow
                                        :background ,smyx-bg-1
                                        :box (:line-width -1 :style released-button)))))
-   `(highlight ((,class (:background ,smyx-gray-8))))
+   `(highlight ((,class (:background ,mok-highlight))))
 
    ;;; highlight current line
    `(hl-line ((,class (:background ,smyx-bg+2))))
-   
+
    ;;; compilation
    `(compilation-column-face ((,class (:foreground ,smyx-blue))))
    `(compilation-enter-directory-face ((,class (:foreground ,smyx-blue))))
@@ -180,13 +190,13 @@
    `(minibuffer-prompt ((,class (:foreground ,smyx-green+1 :background ,smyx-black))))
    `(mode-line
      ((,class (:foreground ,smyx-blue ;;; dominant
-                           :background ,smyx-black-2))))
+                           :background ,mok-modeline-active)))) ;smyx-black-2
    ;; `(mode-line-buffer-id ((,class (:foreground ,smyx-yellow :weight bold))))
 
    `(mode-line-inactive
-     ((,class (:foreground ,smyx-gray-7
-                           :background ,smyx-gray-6))))
-   
+     ((,class (:foreground ,smyx-blue
+                           :background ,mok-modeline-inactive))))
+
    `(region ((,class (:background ,smyx-black-3))))
    `(secondary-selection ((,class (:background ,smyx-bg+2))))
    `(trailing-whitespace ((,class (:background ,smyx-red))))
@@ -195,7 +205,7 @@
    ;;; font lock
    `(font-lock-builtin-face ((,class (:foreground ,smyx-orange))))
    `(font-lock-comment-face ((,class (:foreground ,smyx-gray-9 :italic t))))
-   ;; `(font-lock-comment-delimiter-face ((,class (:foreground ,smyx-green)))) 
+   ;; `(font-lock-comment-delimiter-face ((,class (:foreground ,smyx-green))))
    `(font-lock-constant-face ((,class (:foreground ,smyx-red))))
    ;; `(font-lock-doc-face ((,class (:foreground ,smyx-green+0))))
    `(font-lock-doc-string-face ((,class (:foreground ,smyx-yellow))))
@@ -212,32 +222,31 @@
    `(font-lock-regexp-grouping-backslash ((,class (:foreground ,smyx-yellow))))
    `(font-lock-regexp-grouping-construct ((,class (:foreground ,smyx-red))))
 
-
    `(c-annotation-face ((,class (:inherit font-lock-constant-face))))
 
    `(gui-element ((,class (:background ,smyx-gray-5 :foreground ,smyx-blue-6))))
-   
+
 
    ;;; newsticker
    ;; These are currently placeholders that probably look terrible.
    ;; Someone who uses newsticker is welcome to change these
-   `(newsticker-date-face ((,class (:foreground ,smyx-fg))))
-   `(newsticker-default-face ((,class (:foreground ,smyx-fg))))
-   `(newsticker-enclosure-face ((,class (:foreground ,smyx-green+3))))
-   `(newsticker-extra-face ((,class (:foreground ,smyx-bg+2 :height 0.8))))
-   `(newsticker-feed-face ((,class (:foreground ,smyx-fg))))
-   `(newsticker-immortal-item-face ((,class (:foreground ,smyx-green))))
-   `(newsticker-new-item-face ((,class (:foreground ,smyx-blue))))
-   `(newsticker-obsolete-item-face ((,class (:foreground ,smyx-red))))
-   `(newsticker-old-item-face ((,class (:foreground ,smyx-bg+3))))
-   `(newsticker-statistics-face ((,class (:foreground ,smyx-fg))))
-   `(newsticker-treeview-face ((,class (:foreground ,smyx-fg))))
-   `(newsticker-treeview-immortal-face ((,class (:foreground ,smyx-green))))
-   `(newsticker-treeview-listwindow-face ((,class (:foreground ,smyx-fg))))
-   `(newsticker-treeview-new-face ((,class (:foreground ,smyx-blue :weight bold))))
-   `(newsticker-treeview-obsolete-face ((,class (:foreground ,smyx-red))))
-   `(newsticker-treeview-old-face ((,class (:foreground ,smyx-bg+3))))
-   `(newsticker-treeview-selection-face ((,class (:foreground ,smyx-yellow))))
+   ;; `(newsticker-date-face ((,class (:foreground ,smyx-fg))))
+   ;; `(newsticker-default-face ((,class (:foreground ,smyx-fg))))
+   ;; `(newsticker-enclosure-face ((,class (:foreground ,smyx-green+3))))
+   ;; `(newsticker-extra-face ((,class (:foreground ,smyx-bg+2 :height 0.8))))
+   ;; `(newsticker-feed-face ((,class (:foreground ,smyx-fg))))
+   ;; `(newsticker-immortal-item-face ((,class (:foreground ,smyx-green))))
+   ;; `(newsticker-new-item-face ((,class (:foreground ,smyx-blue))))
+   ;; `(newsticker-obsolete-item-face ((,class (:foreground ,smyx-red))))
+   ;; `(newsticker-old-item-face ((,class (:foreground ,smyx-bg+3))))
+   ;; `(newsticker-statistics-face ((,class (:foreground ,smyx-fg))))
+   ;; `(newsticker-treeview-face ((,class (:foreground ,smyx-fg))))
+   ;; `(newsticker-treeview-immortal-face ((,class (:foreground ,smyx-green))))
+   ;; `(newsticker-treeview-listwindow-face ((,class (:foreground ,smyx-fg))))
+   ;; `(newsticker-treeview-new-face ((,class (:foreground ,smyx-blue :weight bold))))
+   ;; `(newsticker-treeview-obsolete-face ((,class (:foreground ,smyx-red))))
+   ;; `(newsticker-treeview-old-face ((,class (:foreground ,smyx-bg+3))))
+   ;; `(newsticker-treeview-selection-face ((,class (:foreground ,smyx-yellow))))
 
    ;;; external
 
@@ -350,66 +359,66 @@
    `(erc-underline-face ((t (:underline t))))
 
    ;; gnus
-   `(gnus-group-mail-1 ((,class (:bold t :inherit gnus-group-mail-1-empty))))
-   `(gnus-group-mail-1-empty ((,class (:inherit gnus-group-news-1-empty))))
-   `(gnus-group-mail-2 ((,class (:bold t :inherit gnus-group-mail-2-empty))))
-   `(gnus-group-mail-2-empty ((,class (:inherit gnus-group-news-2-empty))))
-   `(gnus-group-mail-3 ((,class (:bold t :inherit gnus-group-mail-3-empty))))
-   `(gnus-group-mail-3-empty ((,class (:inherit gnus-group-news-3-empty))))
-   `(gnus-group-mail-4 ((,class (:bold t :inherit gnus-group-mail-4-empty))))
-   `(gnus-group-mail-4-empty ((,class (:inherit gnus-group-news-4-empty))))
-   `(gnus-group-mail-5 ((,class (:bold t :inherit gnus-group-mail-5-empty))))
-   `(gnus-group-mail-5-empty ((,class (:inherit gnus-group-news-5-empty))))
-   `(gnus-group-mail-6 ((,class (:bold t :inherit gnus-group-mail-6-empty))))
-   `(gnus-group-mail-6-empty ((,class (:inherit gnus-group-news-6-empty))))
-   `(gnus-group-mail-low ((,class (:bold t :inherit gnus-group-mail-low-empty))))
-   `(gnus-group-mail-low-empty ((,class (:inherit gnus-group-news-low-empty))))
-   `(gnus-group-news-1 ((,class (:bold t :inherit gnus-group-news-1-empty))))
-   `(gnus-group-news-2 ((,class (:bold t :inherit gnus-group-news-2-empty))))
-   `(gnus-group-news-3 ((,class (:bold t :inherit gnus-group-news-3-empty))))
-   `(gnus-group-news-4 ((,class (:bold t :inherit gnus-group-news-4-empty))))
-   `(gnus-group-news-5 ((,class (:bold t :inherit gnus-group-news-5-empty))))
-   `(gnus-group-news-6 ((,class (:bold t :inherit gnus-group-news-6-empty))))
-   `(gnus-group-news-low ((,class (:bold t :inherit gnus-group-news-low-empty))))
-   `(gnus-header-content ((,class (:inherit message-header-other))))
-   `(gnus-header-from ((,class (:inherit message-header-from))))
-   `(gnus-header-name ((,class (:inherit message-header-name))))
-   `(gnus-header-newsgroups ((,class (:inherit message-header-other))))
-   `(gnus-header-subject ((,class (:inherit message-header-subject))))
-   `(gnus-summary-cancelled ((,class (:foreground ,smyx-orange))))
-   `(gnus-summary-high-ancient ((,class (:foreground ,smyx-blue))))
-   `(gnus-summary-high-read ((,class (:foreground ,smyx-green :weight bold))))
-   `(gnus-summary-high-ticked ((,class (:foreground ,smyx-orange :weight bold))))
-   `(gnus-summary-high-unread ((,class (:foreground ,smyx-fg :weight bold))))
-   `(gnus-summary-low-ancient ((,class (:foreground ,smyx-blue))))
-   `(gnus-summary-low-read ((t (:foreground ,smyx-green))))
-   `(gnus-summary-low-ticked ((,class (:foreground ,smyx-orange :weight bold))))
-   `(gnus-summary-low-unread ((,class (:foreground ,smyx-fg))))
-   `(gnus-summary-normal-ancient ((,class (:foreground ,smyx-blue+1))))
-   `(gnus-summary-normal-read ((,class (:foreground ,smyx-green))))
-   `(gnus-summary-normal-ticked ((,class (:foreground ,smyx-orange :weight bold))))
-   `(gnus-summary-normal-unread ((,class (:foreground ,smyx-fg))))
-   `(gnus-summary-selected ((,class (:foreground ,smyx-yellow :weight bold))))
-   `(gnus-cite-1 ((,class (:foreground ,smyx-yellow-2))))
-   `(gnus-cite-10 ((,class (:foreground ,smyx-yellow-1))))
-   `(gnus-cite-11 ((,class (:foreground ,smyx-yellow))))
-   `(gnus-cite-2 ((,class (:foreground ,smyx-blue-1))))
-   `(gnus-cite-3 ((,class (:foreground ,smyx-blue-2))))
-   `(gnus-cite-4 ((,class (:foreground ,smyx-green+2))))
-   `(gnus-cite-5 ((,class (:foreground ,smyx-green+1))))
-   `(gnus-cite-6 ((,class (:foreground ,smyx-green))))
-   `(gnus-cite-7 ((,class (:foreground ,smyx-red))))
-   `(gnus-cite-8 ((,class (:foreground ,smyx-red-1))))
-   `(gnus-cite-9 ((,class (:foreground ,smyx-red-2))))
-   `(gnus-group-news-1-empty ((,class (:foreground ,smyx-yellow))))
-   `(gnus-group-news-2-empty ((,class (:foreground ,smyx-green+3))))
-   `(gnus-group-news-3-empty ((,class (:foreground ,smyx-green+1))))
-   `(gnus-group-news-4-empty ((,class (:foreground ,smyx-blue-2))))
-   `(gnus-group-news-5-empty ((,class (:foreground ,smyx-blue-3))))
-   `(gnus-group-news-6-empty ((,class (:foreground ,smyx-bg+2))))
-   `(gnus-group-news-low-empty ((,class (:foreground ,smyx-bg+2))))
-   `(gnus-signature ((,class (:foreground ,smyx-yellow))))
-   `(gnus-x ((,class (:background ,smyx-fg :foreground ,smyx-bg))))
+   ;; `(gnus-group-mail-1 ((,class (:bold t :inherit gnus-group-mail-1-empty))))
+   ;; `(gnus-group-mail-1-empty ((,class (:inherit gnus-group-news-1-empty))))
+   ;; `(gnus-group-mail-2 ((,class (:bold t :inherit gnus-group-mail-2-empty))))
+   ;; `(gnus-group-mail-2-empty ((,class (:inherit gnus-group-news-2-empty))))
+   ;; `(gnus-group-mail-3 ((,class (:bold t :inherit gnus-group-mail-3-empty))))
+   ;; `(gnus-group-mail-3-empty ((,class (:inherit gnus-group-news-3-empty))))
+   ;; `(gnus-group-mail-4 ((,class (:bold t :inherit gnus-group-mail-4-empty))))
+   ;; `(gnus-group-mail-4-empty ((,class (:inherit gnus-group-news-4-empty))))
+   ;; `(gnus-group-mail-5 ((,class (:bold t :inherit gnus-group-mail-5-empty))))
+   ;; `(gnus-group-mail-5-empty ((,class (:inherit gnus-group-news-5-empty))))
+   ;; `(gnus-group-mail-6 ((,class (:bold t :inherit gnus-group-mail-6-empty))))
+   ;; `(gnus-group-mail-6-empty ((,class (:inherit gnus-group-news-6-empty))))
+   ;; `(gnus-group-mail-low ((,class (:bold t :inherit gnus-group-mail-low-empty))))
+   ;; `(gnus-group-mail-low-empty ((,class (:inherit gnus-group-news-low-empty))))
+   ;; `(gnus-group-news-1 ((,class (:bold t :inherit gnus-group-news-1-empty))))
+   ;; `(gnus-group-news-2 ((,class (:bold t :inherit gnus-group-news-2-empty))))
+   ;; `(gnus-group-news-3 ((,class (:bold t :inherit gnus-group-news-3-empty))))
+   ;; `(gnus-group-news-4 ((,class (:bold t :inherit gnus-group-news-4-empty))))
+   ;; `(gnus-group-news-5 ((,class (:bold t :inherit gnus-group-news-5-empty))))
+   ;; `(gnus-group-news-6 ((,class (:bold t :inherit gnus-group-news-6-empty))))
+   ;; `(gnus-group-news-low ((,class (:bold t :inherit gnus-group-news-low-empty))))
+   ;; `(gnus-header-content ((,class (:inherit message-header-other))))
+   ;; `(gnus-header-from ((,class (:inherit message-header-from))))
+   ;; `(gnus-header-name ((,class (:inherit message-header-name))))
+   ;; `(gnus-header-newsgroups ((,class (:inherit message-header-other))))
+   ;; `(gnus-header-subject ((,class (:inherit message-header-subject))))
+   ;; `(gnus-summary-cancelled ((,class (:foreground ,smyx-orange))))
+   ;; `(gnus-summary-high-ancient ((,class (:foreground ,smyx-blue))))
+   ;; `(gnus-summary-high-read ((,class (:foreground ,smyx-green :weight bold))))
+   ;; `(gnus-summary-high-ticked ((,class (:foreground ,smyx-orange :weight bold))))
+   ;; `(gnus-summary-high-unread ((,class (:foreground ,smyx-fg :weight bold))))
+   ;; `(gnus-summary-low-ancient ((,class (:foreground ,smyx-blue))))
+   ;; `(gnus-summary-low-read ((t (:foreground ,smyx-green))))
+   ;; `(gnus-summary-low-ticked ((,class (:foreground ,smyx-orange :weight bold))))
+   ;; `(gnus-summary-low-unread ((,class (:foreground ,smyx-fg))))
+   ;; `(gnus-summary-normal-ancient ((,class (:foreground ,smyx-blue+1))))
+   ;; `(gnus-summary-normal-read ((,class (:foreground ,smyx-green))))
+   ;; `(gnus-summary-normal-ticked ((,class (:foreground ,smyx-orange :weight bold))))
+   ;; `(gnus-summary-normal-unread ((,class (:foreground ,smyx-fg))))
+   ;; `(gnus-summary-selected ((,class (:foreground ,smyx-yellow :weight bold))))
+   ;; `(gnus-cite-1 ((,class (:foreground ,smyx-yellow-2))))
+   ;; `(gnus-cite-10 ((,class (:foreground ,smyx-yellow-1))))
+   ;; `(gnus-cite-11 ((,class (:foreground ,smyx-yellow))))
+   ;; `(gnus-cite-2 ((,class (:foreground ,smyx-blue-1))))
+   ;; `(gnus-cite-3 ((,class (:foreground ,smyx-blue-2))))
+   ;; `(gnus-cite-4 ((,class (:foreground ,smyx-green+2))))
+   ;; `(gnus-cite-5 ((,class (:foreground ,smyx-green+1))))
+   ;; `(gnus-cite-6 ((,class (:foreground ,smyx-green))))
+   ;; `(gnus-cite-7 ((,class (:foreground ,smyx-red))))
+   ;; `(gnus-cite-8 ((,class (:foreground ,smyx-red-1))))
+   ;; `(gnus-cite-9 ((,class (:foreground ,smyx-red-2))))
+   ;; `(gnus-group-news-1-empty ((,class (:foreground ,smyx-yellow))))
+   ;; `(gnus-group-news-2-empty ((,class (:foreground ,smyx-green+3))))
+   ;; `(gnus-group-news-3-empty ((,class (:foreground ,smyx-green+1))))
+   ;; `(gnus-group-news-4-empty ((,class (:foreground ,smyx-blue-2))))
+   ;; `(gnus-group-news-5-empty ((,class (:foreground ,smyx-blue-3))))
+   ;; `(gnus-group-news-6-empty ((,class (:foreground ,smyx-bg+2))))
+   ;; `(gnus-group-news-low-empty ((,class (:foreground ,smyx-bg+2))))
+   ;; `(gnus-signature ((,class (:foreground ,smyx-yellow))))
+   ;; `(gnus-x ((,class (:background ,smyx-fg :foreground ,smyx-bg))))
 
    ;; helm
    `(helm-header
@@ -450,17 +459,17 @@
    `(js2-function-param ((,class (:foreground, smyx-yellow))))
 
    ;; jabber-mode
-   `(jabber-roster-user-away ((,class (:foreground ,smyx-green+2))))
-   `(jabber-roster-user-online ((,class (:foreground ,smyx-blue-1))))
-   `(jabber-roster-user-dnd ((,class (:foreground ,smyx-red+1))))
-   `(jabber-rare-time-face ((,class (:foreground ,smyx-green+1))))
-   `(jabber-chat-prompt-local ((,class (:foreground ,smyx-blue-1))))
-   `(jabber-chat-prompt-foreign ((,class (:foreground ,smyx-red+1))))
-   `(jabber-activity-face((,class (:foreground ,smyx-red+1))))
-   `(jabber-activity-personal-face ((,class (:foreground ,smyx-blue+1))))
-   `(jabber-title-small ((,class (:height 1.1 :weight bold))))
-   `(jabber-title-medium ((,class (:height 1.2 :weight bold))))
-   `(jabber-title-large ((,class (:height 1.3 :weight bold))))
+   ;; `(jabber-roster-user-away ((,class (:foreground ,smyx-green+2))))
+   ;; `(jabber-roster-user-online ((,class (:foreground ,smyx-blue-1))))
+   ;; `(jabber-roster-user-dnd ((,class (:foreground ,smyx-red+1))))
+   ;; `(jabber-rare-time-face ((,class (:foreground ,smyx-green+1))))
+   ;; `(jabber-chat-prompt-local ((,class (:foreground ,smyx-blue-1))))
+   ;; `(jabber-chat-prompt-foreign ((,class (:foreground ,smyx-red+1))))
+   ;; `(jabber-activity-face((,class (:foreground ,smyx-red+1))))
+   ;; `(jabber-activity-personal-face ((,class (:foreground ,smyx-blue+1))))
+   ;; `(jabber-title-small ((,class (:height 1.1 :weight bold))))
+   ;; `(jabber-title-medium ((,class (:height 1.2 :weight bold))))
+   ;; `(jabber-title-large ((,class (:height 1.3 :weight bold))))
 
    ;; linum-mode
    `(linum ((,class (:foreground ,smyx-gray-9 :background ,smyx-bg))))
@@ -476,7 +485,7 @@
    `(magit-log-head-label-remote  ((,class (:background ,smyx-bg :foreground ,smyx-yellow))))
    `(magit-log-head-label-tags    ((,class (:background ,smyx-bg :foreground ,smyx-yellow))))
    `(magit-log-head-label-local    ((,class (:background ,smyx-bg :foreground ,smyx-blue))))
- 
+
 
    `(magit-diff-add ((,class (:foreground ,smyx-green))))
    `(magit-diff-del ((,class (:foreground ,smyx-red))))
@@ -498,32 +507,32 @@
    `(message-separator ((,class (:inherit font-lock-comment))))
 
    ;; mew
-   `(mew-face-header-subject ((,class (:foreground ,smyx-orange))))
-   `(mew-face-header-from ((,class (:foreground ,smyx-yellow))))
-   `(mew-face-header-date ((,class (:foreground ,smyx-green))))
-   `(mew-face-header-to ((,class (:foreground ,smyx-red))))
-   `(mew-face-header-key ((,class (:foreground ,smyx-green))))
-   `(mew-face-header-private ((,class (:foreground ,smyx-green))))
-   `(mew-face-header-important ((,class (:foreground ,smyx-blue))))
-   `(mew-face-header-marginal ((,class (:foreground ,smyx-fg :weight bold))))
-   `(mew-face-header-warning ((,class (:foreground ,smyx-red))))
-   `(mew-face-header-xmew ((,class (:foreground ,smyx-green))))
-   `(mew-face-header-xmew-bad ((,class (:foreground ,smyx-red))))
-   `(mew-face-body-url ((,class (:foreground ,smyx-orange))))
-   `(mew-face-body-comment ((,class (:foreground ,smyx-fg :slant italic))))
-   `(mew-face-body-cite1 ((,class (:foreground ,smyx-green))))
-   `(mew-face-body-cite2 ((,class (:foreground ,smyx-blue))))
-   `(mew-face-body-cite3 ((,class (:foreground ,smyx-orange))))
-   `(mew-face-body-cite4 ((,class (:foreground ,smyx-yellow))))
-   `(mew-face-body-cite5 ((,class (:foreground ,smyx-red))))
-   `(mew-face-mark-review ((,class (:foreground ,smyx-blue))))
-   `(mew-face-mark-escape ((,class (:foreground ,smyx-green))))
-   `(mew-face-mark-delete ((,class (:foreground ,smyx-red))))
-   `(mew-face-mark-unlink ((,class (:foreground ,smyx-yellow))))
-   `(mew-face-mark-refile ((,class (:foreground ,smyx-green))))
-   `(mew-face-mark-unread ((,class (:foreground ,smyx-red-2))))
-   `(mew-face-eof-message ((,class (:foreground ,smyx-green))))
-   `(mew-face-eof-part ((,class (:foreground ,smyx-yellow))))
+   ;; `(mew-face-header-subject ((,class (:foreground ,smyx-orange))))
+   ;; `(mew-face-header-from ((,class (:foreground ,smyx-yellow))))
+   ;; `(mew-face-header-date ((,class (:foreground ,smyx-green))))
+   ;; `(mew-face-header-to ((,class (:foreground ,smyx-red))))
+   ;; `(mew-face-header-key ((,class (:foreground ,smyx-green))))
+   ;; `(mew-face-header-private ((,class (:foreground ,smyx-green))))
+   ;; `(mew-face-header-important ((,class (:foreground ,smyx-blue))))
+   ;; `(mew-face-header-marginal ((,class (:foreground ,smyx-fg :weight bold))))
+   ;; `(mew-face-header-warning ((,class (:foreground ,smyx-red))))
+   ;; `(mew-face-header-xmew ((,class (:foreground ,smyx-green))))
+   ;; `(mew-face-header-xmew-bad ((,class (:foreground ,smyx-red))))
+   ;; `(mew-face-body-url ((,class (:foreground ,smyx-orange))))
+   ;; `(mew-face-body-comment ((,class (:foreground ,smyx-fg :slant italic))))
+   ;; `(mew-face-body-cite1 ((,class (:foreground ,smyx-green))))
+   ;; `(mew-face-body-cite2 ((,class (:foreground ,smyx-blue))))
+   ;; `(mew-face-body-cite3 ((,class (:foreground ,smyx-orange))))
+   ;; `(mew-face-body-cite4 ((,class (:foreground ,smyx-yellow))))
+   ;; `(mew-face-body-cite5 ((,class (:foreground ,smyx-red))))
+   ;; `(mew-face-mark-review ((,class (:foreground ,smyx-blue))))
+   ;; `(mew-face-mark-escape ((,class (:foreground ,smyx-green))))
+   ;; `(mew-face-mark-delete ((,class (:foreground ,smyx-red))))
+   ;; `(mew-face-mark-unlink ((,class (:foreground ,smyx-yellow))))
+   ;; `(mew-face-mark-refile ((,class (:foreground ,smyx-green))))
+   ;; `(mew-face-mark-unread ((,class (:foreground ,smyx-red-2))))
+   ;; `(mew-face-eof-message ((,class (:foreground ,smyx-green))))
+   ;; `(mew-face-eof-part ((,class (:foreground ,smyx-yellow))))
 
    ;; mic-paren
    `(paren-face-match ((,class (:foreground ,smyx-cyan :background ,smyx-bg :weight bold))))
@@ -539,11 +548,11 @@
    `(nav-face-hfile ((,class (:foreground ,smyx-red-4))))
 
    ;; mumamo
-   `(mumamo-background-chunk-major ((,class (:background ,smyx-black))))
-   `(mumamo-background-chunk-submode1 ((,class (:background ,smyx-black))))
-   `(mumamo-background-chunk-submode2 ((,class (:background ,smyx-bg+2))))
-   `(mumamo-background-chunk-submode3 ((,class (:background ,smyx-bg+3))))
-   `(mumamo-background-chunk-submode4 ((,class (:background ,smyx-bg+1))))
+   ;; `(mumamo-background-chunk-major ((,class (:background ,smyx-black))))
+   ;; `(mumamo-background-chunk-submode1 ((,class (:background ,smyx-black))))
+   ;; `(mumamo-background-chunk-submode2 ((,class (:background ,smyx-bg+2))))
+   ;; `(mumamo-background-chunk-submode3 ((,class (:background ,smyx-bg+3))))
+   ;; `(mumamo-background-chunk-submode4 ((,class (:background ,smyx-bg+1))))
 
    ;; org-mode
    `(org-document-title ((,class (:foreground ,smyx-blue :background ,smyx-black :weight bold ))))
@@ -555,7 +564,7 @@
      ((,class (:inherit font-lock-comment-face))))
    `(org-archived ((,class (:slant italic))))
    `(org-checkbox ((,class (:background ,smyx-gray-2 :foreground ,smyx-white
-                                   :box (:line-width 1 :style released-button)))))
+                                        :box (:line-width 1 :style released-button)))))
    `(org-date ((,class (:foreground ,smyx-green))))
    `(org-done ((,class (:bold t :weight bold :foreground ,smyx-green-1
                               :box (:line-width 1 :style none)))))
@@ -575,11 +584,11 @@
    `(org-tag ((,class (:bold t :weight bold))))
    `(org-column ((,class (:background ,smyx-yellow :foreground ,smyx-black))))
    `(org-column-title ((,class (:background ,smyx-bg-1 :weight bold))))
-   `(org-block ((,class (:foreground ,smyx-fg :background ,smyx-bg-05))))
-   `(org-block-begin-line 
+   `(org-block ((,class (:foreground ,smyx-fg :background ,mok-org-block))))
+   `(org-block-begin-line
      ((,class (:foreground "#008ED1" :background ,smyx-bg-1))))
    `(org-block-background ((,class (:background ,smyx-bg-05))))
-   `(org-block-end-line 
+   `(org-block-end-line
      ((,class (:foreground "#008ED1" :background ,smyx-bg-1))))
    `(org-hide ((,class (:foreground ,smyx-bg)))) ;; hide leading stars
    `(org-headline-done ((,class (:foreground ,smyx-green-1))))
@@ -652,13 +661,13 @@
    ;; SLIME
    `(slime-repl-inputed-output-face ((,class (:foreground ,smyx-red))))
 
-  ;; elscreen
-     `(elscreen-tab-other-screen-face (
-        (,class (:foreground ,smyx-gray :background ,smyx-black))))
+   ;; elscreen
+   `(elscreen-tab-other-screen-face (
+                                     (,class (:foreground ,smyx-gray :background ,smyx-black))))
 
-     `(elscreen-tab-current-screen-face (
-        (,class (:foreground ,smyx-gray-5 :background ,smyx-gray))))
-    
+   `(elscreen-tab-current-screen-face (
+                                       (,class (:foreground ,smyx-gray-5 :background ,smyx-gray))))
+
 
   ;;; ansi-term
    `(term-color-black ((,class (:foreground ,smyx-bg
@@ -698,33 +707,33 @@
    `(whitespace-space-after-tab ((,class (:background ,smyx-yellow :foreground ,smyx-red))))
 
    ;; wanderlust
-   `(wl-highlight-folder-few-face ((,class (:foreground ,smyx-red-2))))
-   `(wl-highlight-folder-many-face ((,class (:foreground ,smyx-red-1))))
-   `(wl-highlight-folder-path-face ((,class (:foreground ,smyx-orange))))
-   `(wl-highlight-folder-unread-face ((,class (:foreground ,smyx-blue))))
-   `(wl-highlight-folder-zero-face ((,class (:foreground ,smyx-fg))))
-   `(wl-highlight-folder-unknown-face ((,class (:foreground ,smyx-blue))))
-   `(wl-highlight-message-citation-header ((,class (:foreground ,smyx-red-1))))
-   `(wl-highlight-message-cited-text-1 ((,class (:foreground ,smyx-red))))
-   `(wl-highlight-message-cited-text-2 ((,class (:foreground ,smyx-green+2))))
-   `(wl-highlight-message-cited-text-3 ((,class (:foreground ,smyx-blue))))
-   `(wl-highlight-message-cited-text-4 ((,class (:foreground ,smyx-blue+1))))
-   `(wl-highlight-message-header-contents-face ((,class (:foreground ,smyx-green))))
-   `(wl-highlight-message-headers-face ((,class (:foreground ,smyx-red+1))))
-   `(wl-highlight-message-important-header-contents ((,class (:foreground ,smyx-green+2))))
-   `(wl-highlight-message-header-contents ((,class (:foreground ,smyx-green+1))))
-   `(wl-highlight-message-important-header-contents2 ((,class (:foreground ,smyx-green+2))))
-   `(wl-highlight-message-signature ((,class (:foreground ,smyx-green))))
-   `(wl-highlight-message-unimportant-header-contents ((,class (:foreground ,smyx-fg))))
-   `(wl-highlight-summary-answered-face ((,class (:foreground ,smyx-blue))))
-   `(wl-highlight-summary-disposed-face ((,class (:foreground ,smyx-fg
-                                                         :slant italic))))
-   `(wl-highlight-summary-new-face ((,class (:foreground ,smyx-blue))))
-   `(wl-highlight-summary-normal-face ((,class (:foreground ,smyx-fg))))
-   `(wl-highlight-summary-thread-top-face ((,class (:foreground ,smyx-yellow))))
-   `(wl-highlight-thread-indent-face ((,class (:foreground ,smyx-magenta))))
-   `(wl-highlight-summary-refiled-face ((,class (:foreground ,smyx-fg))))
-   `(wl-highlight-summary-displaying-face ((,class (:underline t :weight bold))))
+   ;; `(wl-highlight-folder-few-face ((,class (:foreground ,smyx-red-2))))
+   ;; `(wl-highlight-folder-many-face ((,class (:foreground ,smyx-red-1))))
+   ;; `(wl-highlight-folder-path-face ((,class (:foreground ,smyx-orange))))
+   ;; `(wl-highlight-folder-unread-face ((,class (:foreground ,smyx-blue))))
+   ;; `(wl-highlight-folder-zero-face ((,class (:foreground ,smyx-fg))))
+   ;; `(wl-highlight-folder-unknown-face ((,class (:foreground ,smyx-blue))))
+   ;; `(wl-highlight-message-citation-header ((,class (:foreground ,smyx-red-1))))
+   ;; `(wl-highlight-message-cited-text-1 ((,class (:foreground ,smyx-red))))
+   ;; `(wl-highlight-message-cited-text-2 ((,class (:foreground ,smyx-green+2))))
+   ;; `(wl-highlight-message-cited-text-3 ((,class (:foreground ,smyx-blue))))
+   ;; `(wl-highlight-message-cited-text-4 ((,class (:foreground ,smyx-blue+1))))
+   ;; `(wl-highlight-message-header-contents-face ((,class (:foreground ,smyx-green))))
+   ;; `(wl-highlight-message-headers-face ((,class (:foreground ,smyx-red+1))))
+   ;; `(wl-highlight-message-important-header-contents ((,class (:foreground ,smyx-green+2))))
+   ;; `(wl-highlight-message-header-contents ((,class (:foreground ,smyx-green+1))))
+   ;; `(wl-highlight-message-important-header-contents2 ((,class (:foreground ,smyx-green+2))))
+   ;; `(wl-highlight-message-signature ((,class (:foreground ,smyx-green))))
+   ;; `(wl-highlight-message-unimportant-header-contents ((,class (:foreground ,smyx-fg))))
+   ;; `(wl-highlight-summary-answered-face ((,class (:foreground ,smyx-blue))))
+   ;; `(wl-highlight-summary-disposed-face ((,class (:foreground ,smyx-fg
+   ;;                                                            :slant italic))))
+   ;; `(wl-highlight-summary-new-face ((,class (:foreground ,smyx-blue))))
+   ;; `(wl-highlight-summary-normal-face ((,class (:foreground ,smyx-fg))))
+   ;; `(wl-highlight-summary-thread-top-face ((,class (:foreground ,smyx-yellow))))
+   ;; `(wl-highlight-thread-indent-face ((,class (:foreground ,smyx-magenta))))
+   ;; `(wl-highlight-summary-refiled-face ((,class (:foreground ,smyx-fg))))
+   ;; `(wl-highlight-summary-displaying-face ((,class (:underline t :weight bold))))
 
    ;; which-func-mode
    `(which-func ((,class (:foreground ,smyx-green+4))))
@@ -754,7 +763,7 @@
   (custom-theme-set-variables
    'smyx
    `(ansi-color-names-vector [,smyx-bg ,smyx-red-2 ,smyx-green ,smyx-orange
-                                          ,smyx-blue-1 ,smyx-magenta ,smyx-cyan ,smyx-fg])
+                                       ,smyx-blue-1 ,smyx-magenta ,smyx-cyan ,smyx-fg])
    ;; fill-column-indicator
    `(fci-rule-color ,smyx-bg-05)))
 
@@ -766,7 +775,7 @@
 
 (provide-theme 'smyx)
 
-;; Local Variables:
+;; Local-disabled-section-of-Variables:
 ;; no-byte-compile: t
 ;; indent-tabs-mode: nil
 ;; eval: (when (fboundp 'rainbow-mode) (rainbow-mode +1))
