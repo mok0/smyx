@@ -47,7 +47,8 @@
       (mok-gray "#666666")
       ;;      (mok-org-block "#002E3D")
       (mok-org-block "#054260")     ;; prussian blue darkened
-      (mok-modeline-active "#555555")
+      ;;(mok-modeline-active "#555555")
+      (mok-modeline-active "#2c6c12")
       (mok-modeline-inactive "#333344")
 
       ;; smyx palette
