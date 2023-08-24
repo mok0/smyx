@@ -41,15 +41,22 @@
 
 (let ((class '((class color) (min-colors 89)))
 
-      ;;(mok-highlight "#26a644")  ;; greenish
-      (mok-green "#26a644")
+      ;; (mok-green "#26a644")
+
+      ;; mok-highligt is the highligt line in the minibuffer
       (mok-highlight "#c55800")  ;; orangish
       (mok-gray "#666666")
-      ;;      (mok-org-block "#002E3D")
+
       (mok-org-block "#054260")     ;; prussian blue darkened
-      ;;(mok-modeline-active "#555555")
+
       (mok-modeline-active "#2c6c12")
       (mok-modeline-inactive "#333344")
+
+      ;; Highlight colors
+      (mok-region "#e0b000")      ;; #e1be0f
+      (mok-secondary-selection "#07c9cd")
+      ;; mok-hl-line is the line currently being edited.
+      (mok-hl-line "#064e70")  ;; prussian blue
 
       ;; smyx palette
       (smyx-fg "#F7F7F7")
@@ -149,7 +156,7 @@
    `(highlight ((,class (:background ,mok-highlight))))
 
    ;;; highlight current line
-   `(hl-line ((,class (:background ,smyx-bg+2))))
+   `(hl-line ((,class (:background ,mok-hl-line))))  ;; was smyx-bg+2
 
    ;;; compilation
    `(compilation-column-face ((,class (:foreground ,smyx-blue))))
@@ -198,8 +205,8 @@
      ((,class (:foreground ,smyx-blue
                            :background ,mok-modeline-inactive))))
 
-   `(region ((,class (:background ,smyx-black-3))))
-   `(secondary-selection ((,class (:background ,smyx-bg+2))))
+   `(region ((,class (:background ,mok-region)))) ;; was  smyx-black-3
+   `(secondary-selection ((,class (:background ,mok-secondary-selection)))) ;; was smyx-bg+2
    `(trailing-whitespace ((,class (:background ,smyx-red))))
    `(vertical-border ((,class (:foreground ,smyx-gray-5 :background ,smyx-black))))
 
@@ -439,8 +446,8 @@
    `(helm-candidate-number ((,class (:foreground ,smyx-green+4 :background ,smyx-bg-1))))
 
    ;; hl-line-mode
-   `(hl-sexp-face ((,class (:background ,smyx-gray-5))))
-   `(hl-line-face ((,class (:background ,smyx-gray-5))))
+   `(hl-sexp-face ((,class (:background ,smyx-gray-5))))  ;; was smyx-gray-5
+   `(hl-line-face ((,class (:background ,smyx-gray-5)))) ;; was smyx-gray-5
 
    ;; ido-mode
    `(ido-first-match ((,class (:foreground ,smyx-blue :background ,smyx-black))))
