@@ -58,6 +58,11 @@
       ;; mok-hl-line is the line currently being edited.
       (mok-hl-line "#064e70")  ;; prussian blue
 
+      (mok-avy-lead   "#00ced1")
+      (mok-avy-lead-0 "#4682b4")
+      (mok-avy-lead-1 "#7fffd4")
+      (mok-avy-lead-2 "#5f9ea0")
+
       ;; smyx palette
       (smyx-fg "#F7F7F7")
 
@@ -170,6 +175,12 @@
    `(compilation-line-number ((,class (:foreground ,smyx-yellow))))
    `(compilation-message-face ((,class (:foreground ,smyx-blue))))
    `(compilation-warning-face ((,class (:foreground ,smyx-yellow :weight bold :underline t))))
+
+   ;;; Avy
+   `(avy-lead-face   ((,class (:foreground ,smyx-black :background ,mok-avy-lead))))
+   `(avy-lead-face-0 ((,class (:foreground ,smyx-white :background ,mok-avy-lead-0))))
+   `(avy-lead-face-1 ((,class (:foreground ,smyx-black :background ,mok-avy-lead-1))))
+   `(avy-lead-face-2 ((,class (:foreground ,smyx-black :background ,mok-avy-lead-2))))
 
    ;;; grep
    `(grep-context-face ((,class (:foreground ,smyx-black :background ,smyx-pink-1))))
