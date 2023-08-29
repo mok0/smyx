@@ -163,6 +163,10 @@
    ;;; highlight current line
    `(hl-line ((,class (:background ,mok-hl-line))))  ;; was smyx-bg+2
 
+   ;; line-number
+   `(line-number ((,class (:foreground ,smyx-gray-9 :background ,smyx-bg))))
+
+
    ;;; compilation
    `(compilation-column-face ((,class (:foreground ,smyx-blue))))
    `(compilation-enter-directory-face ((,class (:foreground ,smyx-blue))))
