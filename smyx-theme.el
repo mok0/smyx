@@ -52,8 +52,14 @@
       (mok-modeline-active "#2c6c12")
       (mok-modeline-inactive "#333344")
 
+      (mok-tab-bar-active "#2c6c12")
+      (mok-tab-bar-active-foreground "#96d9f1")
+      (mok-tab-bar-inactive "#064e70")
+      (mok-tab-bar-inactive-foreground "#4682b4")
+
       ;; Highlight colors
       (mok-region "#e0b000")      ;; #e1be0f
+      (mok-region-foreground "#ffffff")
       (mok-secondary-selection "#07c9cd")
       ;; mok-hl-line is the line currently being edited.
       (mok-hl-line "#064e70")  ;; prussian blue
@@ -220,7 +226,7 @@
      ((,class (:foreground ,smyx-blue
                            :background ,mok-modeline-inactive))))
 
-   `(region ((,class (:background ,mok-region)))) ;; was  smyx-black-3
+   `(region ((,class (:foreground ,mok-region-foreground :background ,mok-region)))) ;; was  smyx-black-3
    `(secondary-selection ((,class (:background ,mok-secondary-selection)))) ;; was smyx-bg+2
    `(trailing-whitespace ((,class (:background ,smyx-red))))
    `(vertical-border ((,class (:foreground ,smyx-gray-5 :background ,smyx-black))))
@@ -470,6 +476,14 @@
    `(ido-subdir ((,class (:foreground ,smyx-gray-4 :background ,smyx-black))))
    `(ido-indicator ((,class (:foreground ,smyx-bg :background ,smyx-pink))))
 
+
+
+   ;; tab-bar-mode
+   `(tab-bar-tab ((,class (:foreground ,mok-tab-bar-active-foreground :background ,mok-tab-bar-active))))
+   `(tab-bar-tab-inactive ((,class (:foreground ,mok-tab-bar-inactive-foreground :background ,mok-tab-bar-inactive))))
+
+
+
    ;; js2-mode
    `(js2-warning-face ((,class (:underline ,smyx-blue))))
    `(js2-error-face ((,class (:foreground ,smyx-red :weight bold))))
@@ -621,7 +635,7 @@
    ;; `(org-scheduled-previously ((,class (:foreground ,smyx-red-4))))
    ;; `(org-scheduled-today ((,class (:foreground ,smyx-blue+1))))
    ;; `(org-special-keyword ((,class (:foreground ,smyx-yellow-1))))
-   ;; `(org-table ((,class (:foreground ,smyx-green+2))))
+   `(org-table ((,class (:foreground ,smyx-green+2))))
    ;; `(org-time-grid ((,class (:foreground ,smyx-orange))))
    ;; `(org-upcoming-deadline ((,class (:inherit font-lock-keyword-face))))
    ;; `(org-warning ((,class (:bold t :foreground ,smyx-red :weight bold :underline nil))))
