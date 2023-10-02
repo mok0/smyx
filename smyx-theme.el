@@ -41,7 +41,16 @@
 
 (let ((class '((class color) (min-colors 89)))
 
-      ;; (mok-green "#26a644")
+
+      (mok-rainbow1 "#ff3b30") ;; red
+      (mok-rainbow2 "#0beae3") ;; cyan
+      (mok-rainbow3 "#f58b0c") ;; darkorange
+      (mok-rainbow4 "#007aff") ;; blue
+      (mok-rainbow5 "#fbcd06") ;; yellow
+      (mok-rainbow6 "#af52de") ;; purple
+      (mok-rainbow7 "#009000") ;; green
+
+      ;; (mok-dark-green "#26a644")
 
       ;; mok-highligt is the highligt line in the minibuffer
       (mok-highlight "#c55800")  ;; orangish
@@ -112,6 +121,7 @@
       (smyx-green+4 "#bfebbf")
       (smyx-green-blue-org "#BBFFD1")
 
+      (blue )
 
       (smyx-cyan "#96D9F1")
       (smyx-blue+1 "#94bff3")
@@ -388,66 +398,66 @@
    `(erc-underline-face ((t (:underline t))))
 
    ;; gnus
-   ;; `(gnus-group-mail-1 ((,class (:bold t :inherit gnus-group-mail-1-empty))))
-   ;; `(gnus-group-mail-1-empty ((,class (:inherit gnus-group-news-1-empty))))
-   ;; `(gnus-group-mail-2 ((,class (:bold t :inherit gnus-group-mail-2-empty))))
-   ;; `(gnus-group-mail-2-empty ((,class (:inherit gnus-group-news-2-empty))))
-   ;; `(gnus-group-mail-3 ((,class (:bold t :inherit gnus-group-mail-3-empty))))
-   ;; `(gnus-group-mail-3-empty ((,class (:inherit gnus-group-news-3-empty))))
-   ;; `(gnus-group-mail-4 ((,class (:bold t :inherit gnus-group-mail-4-empty))))
-   ;; `(gnus-group-mail-4-empty ((,class (:inherit gnus-group-news-4-empty))))
-   ;; `(gnus-group-mail-5 ((,class (:bold t :inherit gnus-group-mail-5-empty))))
-   ;; `(gnus-group-mail-5-empty ((,class (:inherit gnus-group-news-5-empty))))
-   ;; `(gnus-group-mail-6 ((,class (:bold t :inherit gnus-group-mail-6-empty))))
-   ;; `(gnus-group-mail-6-empty ((,class (:inherit gnus-group-news-6-empty))))
-   ;; `(gnus-group-mail-low ((,class (:bold t :inherit gnus-group-mail-low-empty))))
-   ;; `(gnus-group-mail-low-empty ((,class (:inherit gnus-group-news-low-empty))))
-   ;; `(gnus-group-news-1 ((,class (:bold t :inherit gnus-group-news-1-empty))))
-   ;; `(gnus-group-news-2 ((,class (:bold t :inherit gnus-group-news-2-empty))))
-   ;; `(gnus-group-news-3 ((,class (:bold t :inherit gnus-group-news-3-empty))))
-   ;; `(gnus-group-news-4 ((,class (:bold t :inherit gnus-group-news-4-empty))))
-   ;; `(gnus-group-news-5 ((,class (:bold t :inherit gnus-group-news-5-empty))))
-   ;; `(gnus-group-news-6 ((,class (:bold t :inherit gnus-group-news-6-empty))))
-   ;; `(gnus-group-news-low ((,class (:bold t :inherit gnus-group-news-low-empty))))
-   ;; `(gnus-header-content ((,class (:inherit message-header-other))))
-   ;; `(gnus-header-from ((,class (:inherit message-header-from))))
-   ;; `(gnus-header-name ((,class (:inherit message-header-name))))
-   ;; `(gnus-header-newsgroups ((,class (:inherit message-header-other))))
-   ;; `(gnus-header-subject ((,class (:inherit message-header-subject))))
-   ;; `(gnus-summary-cancelled ((,class (:foreground ,smyx-orange))))
-   ;; `(gnus-summary-high-ancient ((,class (:foreground ,smyx-blue))))
-   ;; `(gnus-summary-high-read ((,class (:foreground ,smyx-green :weight bold))))
-   ;; `(gnus-summary-high-ticked ((,class (:foreground ,smyx-orange :weight bold))))
-   ;; `(gnus-summary-high-unread ((,class (:foreground ,smyx-fg :weight bold))))
-   ;; `(gnus-summary-low-ancient ((,class (:foreground ,smyx-blue))))
-   ;; `(gnus-summary-low-read ((t (:foreground ,smyx-green))))
-   ;; `(gnus-summary-low-ticked ((,class (:foreground ,smyx-orange :weight bold))))
-   ;; `(gnus-summary-low-unread ((,class (:foreground ,smyx-fg))))
-   ;; `(gnus-summary-normal-ancient ((,class (:foreground ,smyx-blue+1))))
-   ;; `(gnus-summary-normal-read ((,class (:foreground ,smyx-green))))
-   ;; `(gnus-summary-normal-ticked ((,class (:foreground ,smyx-orange :weight bold))))
-   ;; `(gnus-summary-normal-unread ((,class (:foreground ,smyx-fg))))
-   ;; `(gnus-summary-selected ((,class (:foreground ,smyx-yellow :weight bold))))
-   ;; `(gnus-cite-1 ((,class (:foreground ,smyx-yellow-2))))
-   ;; `(gnus-cite-10 ((,class (:foreground ,smyx-yellow-1))))
-   ;; `(gnus-cite-11 ((,class (:foreground ,smyx-yellow))))
-   ;; `(gnus-cite-2 ((,class (:foreground ,smyx-blue-1))))
-   ;; `(gnus-cite-3 ((,class (:foreground ,smyx-blue-2))))
-   ;; `(gnus-cite-4 ((,class (:foreground ,smyx-green+2))))
-   ;; `(gnus-cite-5 ((,class (:foreground ,smyx-green+1))))
-   ;; `(gnus-cite-6 ((,class (:foreground ,smyx-green))))
-   ;; `(gnus-cite-7 ((,class (:foreground ,smyx-red))))
-   ;; `(gnus-cite-8 ((,class (:foreground ,smyx-red-1))))
-   ;; `(gnus-cite-9 ((,class (:foreground ,smyx-red-2))))
-   ;; `(gnus-group-news-1-empty ((,class (:foreground ,smyx-yellow))))
-   ;; `(gnus-group-news-2-empty ((,class (:foreground ,smyx-green+3))))
-   ;; `(gnus-group-news-3-empty ((,class (:foreground ,smyx-green+1))))
-   ;; `(gnus-group-news-4-empty ((,class (:foreground ,smyx-blue-2))))
-   ;; `(gnus-group-news-5-empty ((,class (:foreground ,smyx-blue-3))))
-   ;; `(gnus-group-news-6-empty ((,class (:foreground ,smyx-bg+2))))
-   ;; `(gnus-group-news-low-empty ((,class (:foreground ,smyx-bg+2))))
-   ;; `(gnus-signature ((,class (:foreground ,smyx-yellow))))
-   ;; `(gnus-x ((,class (:background ,smyx-fg :foreground ,smyx-bg))))
+   `(gnus-group-mail-1 ((,class (:bold t :inherit gnus-group-mail-1-empty))))
+   `(gnus-group-mail-1-empty ((,class (:inherit gnus-group-news-1-empty))))
+   `(gnus-group-mail-2 ((,class (:bold t :inherit gnus-group-mail-2-empty))))
+   `(gnus-group-mail-2-empty ((,class (:inherit gnus-group-news-2-empty))))
+   `(gnus-group-mail-3 ((,class (:bold t :inherit gnus-group-mail-3-empty))))
+   `(gnus-group-mail-3-empty ((,class (:inherit gnus-group-news-3-empty))))
+   `(gnus-group-mail-4 ((,class (:bold t :inherit gnus-group-mail-4-empty))))
+   `(gnus-group-mail-4-empty ((,class (:inherit gnus-group-news-4-empty))))
+   `(gnus-group-mail-5 ((,class (:bold t :inherit gnus-group-mail-5-empty))))
+   `(gnus-group-mail-5-empty ((,class (:inherit gnus-group-news-5-empty))))
+   `(gnus-group-mail-6 ((,class (:bold t :inherit gnus-group-mail-6-empty))))
+   `(gnus-group-mail-6-empty ((,class (:inherit gnus-group-news-6-empty))))
+   `(gnus-group-mail-low ((,class (:bold t :inherit gnus-group-mail-low-empty))))
+   `(gnus-group-mail-low-empty ((,class (:inherit gnus-group-news-low-empty))))
+   `(gnus-group-news-1 ((,class (:bold t :inherit gnus-group-news-1-empty))))
+   `(gnus-group-news-2 ((,class (:bold t :inherit gnus-group-news-2-empty))))
+   `(gnus-group-news-3 ((,class (:bold t :inherit gnus-group-news-3-empty))))
+   `(gnus-group-news-4 ((,class (:bold t :inherit gnus-group-news-4-empty))))
+   `(gnus-group-news-5 ((,class (:bold t :inherit gnus-group-news-5-empty))))
+   `(gnus-group-news-6 ((,class (:bold t :inherit gnus-group-news-6-empty))))
+   `(gnus-group-news-low ((,class (:bold t :inherit gnus-group-news-low-empty))))
+   `(gnus-header-content ((,class (:inherit message-header-other))))
+   `(gnus-header-from ((,class (:inherit message-header-from))))
+   `(gnus-header-name ((,class (:inherit message-header-name))))
+   `(gnus-header-newsgroups ((,class (:inherit message-header-other))))
+   `(gnus-header-subject ((,class (:inherit message-header-subject))))
+   `(gnus-summary-cancelled ((,class (:foreground ,smyx-orange))))
+   `(gnus-summary-high-ancient ((,class (:foreground ,smyx-blue))))
+   `(gnus-summary-high-read ((,class (:foreground ,smyx-green :weight bold))))
+   `(gnus-summary-high-ticked ((,class (:foreground ,smyx-orange :weight bold))))
+   `(gnus-summary-high-unread ((,class (:foreground ,smyx-fg :weight bold))))
+   `(gnus-summary-low-ancient ((,class (:foreground ,smyx-blue))))
+   `(gnus-summary-low-read ((t (:foreground ,smyx-green))))
+   `(gnus-summary-low-ticked ((,class (:foreground ,smyx-orange :weight bold))))
+   `(gnus-summary-low-unread ((,class (:foreground ,smyx-fg))))
+   `(gnus-summary-normal-ancient ((,class (:foreground ,smyx-blue+1))))
+   `(gnus-summary-normal-read ((,class (:foreground ,smyx-green))))
+   `(gnus-summary-normal-ticked ((,class (:foreground ,smyx-orange :weight bold))))
+   `(gnus-summary-normal-unread ((,class (:foreground ,smyx-fg))))
+   `(gnus-summary-selected ((,class (:foreground ,smyx-yellow :weight bold))))
+   `(gnus-cite-1 ((,class (:foreground ,smyx-yellow-2))))
+   `(gnus-cite-10 ((,class (:foreground ,smyx-yellow-1))))
+   `(gnus-cite-11 ((,class (:foreground ,smyx-yellow))))
+   `(gnus-cite-2 ((,class (:foreground ,smyx-blue-1))))
+   `(gnus-cite-3 ((,class (:foreground ,smyx-blue-2))))
+   `(gnus-cite-4 ((,class (:foreground ,smyx-green+2))))
+   `(gnus-cite-5 ((,class (:foreground ,smyx-green+1))))
+   `(gnus-cite-6 ((,class (:foreground ,smyx-green))))
+   `(gnus-cite-7 ((,class (:foreground ,smyx-red))))
+   `(gnus-cite-8 ((,class (:foreground ,smyx-red-1))))
+   `(gnus-cite-9 ((,class (:foreground ,smyx-red-2))))
+   `(gnus-group-news-1-empty ((,class (:foreground ,smyx-yellow))))
+   `(gnus-group-news-2-empty ((,class (:foreground ,smyx-green+3))))
+   `(gnus-group-news-3-empty ((,class (:foreground ,smyx-green+1))))
+   `(gnus-group-news-4-empty ((,class (:foreground ,smyx-blue-2))))
+   `(gnus-group-news-5-empty ((,class (:foreground ,smyx-blue-3))))
+   `(gnus-group-news-6-empty ((,class (:foreground ,smyx-bg+2))))
+   `(gnus-group-news-low-empty ((,class (:foreground ,smyx-bg+2))))
+   `(gnus-signature ((,class (:foreground ,smyx-yellow))))
+   `(gnus-x ((,class (:background ,smyx-fg :foreground ,smyx-bg))))
 
    ;; helm
    `(helm-header
@@ -477,11 +487,10 @@
    `(ido-indicator ((,class (:foreground ,smyx-bg :background ,smyx-pink))))
 
 
-
    ;; tab-bar-mode
-   `(tab-bar-tab ((,class (:foreground ,mok-tab-bar-active-foreground :background ,mok-tab-bar-active))))
-   `(tab-bar-tab-inactive ((,class (:foreground ,mok-tab-bar-inactive-foreground :background ,mok-tab-bar-inactive))))
-
+   ;; `(tab-bar ((,class ( :height 1.1 ))))
+   ;; `(tab-bar-tab ((,class (:foreground ,mok-tab-bar-active-foreground :background ,mok-tab-bar-active))))
+   ;; `(tab-bar-tab-inactive ((,class (:foreground ,mok-tab-bar-inactive-foreground :background ,mok-tab-bar-inactive))))
 
 
    ;; js2-mode
@@ -652,18 +661,18 @@
    `(outline-1 ((,class (:inherit outline-2 :height 1.0))))
 
    ;; rainbow-delimiters
-   `(rainbow-delimiters-depth-1-face ((,class (:foreground ,smyx-red-1))))
-   `(rainbow-delimiters-depth-2-face ((,class (:foreground ,smyx-green-2))))
-   `(rainbow-delimiters-depth-3-face ((,class (:foreground ,smyx-pink-1))))
-   `(rainbow-delimiters-depth-4-face ((,class (:foreground ,smyx-yellow))))
-   `(rainbow-delimiters-depth-5-face ((,class (:foreground ,smyx-green))))
-   `(rainbow-delimiters-depth-6-face ((,class (:foreground ,smyx-blue-3))))
-   `(rainbow-delimiters-depth-7-face ((,class (:foreground ,smyx-orange))))
-   `(rainbow-delimiters-depth-8-face ((,class (:foreground ,smyx-blue-2))))
-   `(rainbow-delimiters-depth-9-face ((,class (:foreground ,smyx-gray))))
-   `(rainbow-delimiters-depth-10-face ((,class (:foreground ,smyx-white))))
-   `(rainbow-delimiters-depth-11-face ((,class (:foreground ,smyx-blue+1))))
-   `(rainbow-delimiters-depth-12-face ((,class (:foreground ,smyx-red-4))))
+   `(rainbow-delimiters-depth-1-face ((,class (:foreground ,mok-rainbow1))))
+   `(rainbow-delimiters-depth-2-face ((,class (:foreground ,mok-rainbow2))))
+   `(rainbow-delimiters-depth-3-face ((,class (:foreground ,mok-rainbow3))))
+   `(rainbow-delimiters-depth-4-face ((,class (:foreground ,mok-rainbow4))))
+   `(rainbow-delimiters-depth-5-face ((,class (:foreground ,mok-rainbow5))))
+   `(rainbow-delimiters-depth-6-face ((,class (:foreground ,mok-rainbow6))))
+   `(rainbow-delimiters-depth-7-face ((,class (:foreground ,mok-rainbow7))))
+   `(rainbow-delimiters-depth-8-face ((,class (:foreground ,mok-rainbow1))))
+   `(rainbow-delimiters-depth-9-face ((,class (:foreground ,mok-rainbow2))))
+   `(rainbow-delimiters-depth-10-face ((,class (:foreground ,mok-rainbow3))))
+   `(rainbow-delimiters-depth-11-face ((,class (:foreground ,mok-rainbow4))))
+   `(rainbow-delimiters-depth-12-face ((,class (:foreground ,mok-rainbow5))))
 
    ;; rpm-mode
    `(rpm-spec-dir-face ((,class (:foreground ,smyx-green))))
@@ -815,7 +824,7 @@
 ;; Local-disabled-section-of-Variables:
 ;; no-byte-compile: t
 ;; indent-tabs-mode: nil
-;; eval: (when (fboundp 'rainbow-mode) (rainbow-mode +1))
+;; eval: (when (fboundp 'rainbow-mode) (rainbow-mode))
 ;; End:
 
 ;;; smyx-theme.el ends here.
