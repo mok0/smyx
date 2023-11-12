@@ -56,7 +56,8 @@
       (mok-highlight "#c55800")  ;; orangish
       (mok-gray "#666666")
 
-      (mok-org-block "#054260")     ;; prussian blue darkened
+      ;;(mok-org-block "#054260")     ;; prussian blue darkened
+      (mok-org-block "#072d42")     ;; prussian blue darkened even more
 
       (mok-modeline-active "#2c6c12")
       (mok-modeline-inactive "#333344")
@@ -639,16 +640,16 @@
    `(org-hide ((,class (:foreground ,smyx-bg)))) ;; hide leading stars
    `(org-headline-done ((,class (:foreground ,smyx-green-1))))
 
-   ;; `(org-deadline-announce ((,class (:foreground ,smyx-red-1))))
-   ;; `(org-scheduled ((,class (:foreground ,smyx-green+4))))
-   ;; `(org-scheduled-previously ((,class (:foreground ,smyx-red-4))))
-   ;; `(org-scheduled-today ((,class (:foreground ,smyx-blue+1))))
-   ;; `(org-special-keyword ((,class (:foreground ,smyx-yellow-1))))
+   `(org-deadline-announce ((,class (:foreground ,smyx-red-1))))
+   `(org-scheduled ((,class (:foreground ,smyx-green+4))))
+   `(org-scheduled-previously ((,class (:foreground ,smyx-red-4))))
+   `(org-scheduled-today ((,class (:foreground ,smyx-blue+1))))
+   `(org-special-keyword ((,class (:foreground ,smyx-yellow-1))))
    `(org-table ((,class (:foreground ,smyx-green+2))))
-   ;; `(org-time-grid ((,class (:foreground ,smyx-orange))))
-   ;; `(org-upcoming-deadline ((,class (:inherit font-lock-keyword-face))))
-   ;; `(org-warning ((,class (:bold t :foreground ,smyx-red :weight bold :underline nil))))
-   ;; `(org-formula ((,class (:foreground ,smyx-yellow-2))))
+   `(org-time-grid ((,class (:foreground ,smyx-orange))))
+   `(org-upcoming-deadline ((,class (:inherit font-lock-keyword-face))))
+   `(org-warning ((,class (:bold t :foreground ,smyx-red :weight bold :underline nil))))
+   `(org-formula ((,class (:foreground ,smyx-yellow-2))))
 
    ;; outline
    `(outline-8 ((,class (:inherit default))))
@@ -753,33 +754,33 @@
    `(whitespace-space-after-tab ((,class (:background ,smyx-yellow :foreground ,smyx-red))))
 
    ;; wanderlust
-   ;; `(wl-highlight-folder-few-face ((,class (:foreground ,smyx-red-2))))
-   ;; `(wl-highlight-folder-many-face ((,class (:foreground ,smyx-red-1))))
-   ;; `(wl-highlight-folder-path-face ((,class (:foreground ,smyx-orange))))
-   ;; `(wl-highlight-folder-unread-face ((,class (:foreground ,smyx-blue))))
-   ;; `(wl-highlight-folder-zero-face ((,class (:foreground ,smyx-fg))))
-   ;; `(wl-highlight-folder-unknown-face ((,class (:foreground ,smyx-blue))))
-   ;; `(wl-highlight-message-citation-header ((,class (:foreground ,smyx-red-1))))
-   ;; `(wl-highlight-message-cited-text-1 ((,class (:foreground ,smyx-red))))
-   ;; `(wl-highlight-message-cited-text-2 ((,class (:foreground ,smyx-green+2))))
-   ;; `(wl-highlight-message-cited-text-3 ((,class (:foreground ,smyx-blue))))
-   ;; `(wl-highlight-message-cited-text-4 ((,class (:foreground ,smyx-blue+1))))
-   ;; `(wl-highlight-message-header-contents-face ((,class (:foreground ,smyx-green))))
-   ;; `(wl-highlight-message-headers-face ((,class (:foreground ,smyx-red+1))))
-   ;; `(wl-highlight-message-important-header-contents ((,class (:foreground ,smyx-green+2))))
-   ;; `(wl-highlight-message-header-contents ((,class (:foreground ,smyx-green+1))))
-   ;; `(wl-highlight-message-important-header-contents2 ((,class (:foreground ,smyx-green+2))))
-   ;; `(wl-highlight-message-signature ((,class (:foreground ,smyx-green))))
-   ;; `(wl-highlight-message-unimportant-header-contents ((,class (:foreground ,smyx-fg))))
-   ;; `(wl-highlight-summary-answered-face ((,class (:foreground ,smyx-blue))))
-   ;; `(wl-highlight-summary-disposed-face ((,class (:foreground ,smyx-fg
-   ;;                                                            :slant italic))))
-   ;; `(wl-highlight-summary-new-face ((,class (:foreground ,smyx-blue))))
-   ;; `(wl-highlight-summary-normal-face ((,class (:foreground ,smyx-fg))))
-   ;; `(wl-highlight-summary-thread-top-face ((,class (:foreground ,smyx-yellow))))
-   ;; `(wl-highlight-thread-indent-face ((,class (:foreground ,smyx-magenta))))
-   ;; `(wl-highlight-summary-refiled-face ((,class (:foreground ,smyx-fg))))
-   ;; `(wl-highlight-summary-displaying-face ((,class (:underline t :weight bold))))
+   `(wl-highlight-folder-few-face ((,class (:foreground ,smyx-red-2))))
+   `(wl-highlight-folder-many-face ((,class (:foreground ,smyx-red-1))))
+   `(wl-highlight-folder-path-face ((,class (:foreground ,smyx-orange))))
+   `(wl-highlight-folder-unread-face ((,class (:foreground ,smyx-blue))))
+   `(wl-highlight-folder-zero-face ((,class (:foreground ,smyx-fg))))
+   `(wl-highlight-folder-unknown-face ((,class (:foreground ,smyx-blue))))
+   `(wl-highlight-message-citation-header ((,class (:foreground ,smyx-red-1))))
+   `(wl-highlight-message-cited-text-1 ((,class (:foreground ,smyx-red))))
+   `(wl-highlight-message-cited-text-2 ((,class (:foreground ,smyx-green+2))))
+   `(wl-highlight-message-cited-text-3 ((,class (:foreground ,smyx-blue))))
+   `(wl-highlight-message-cited-text-4 ((,class (:foreground ,smyx-blue+1))))
+   `(wl-highlight-message-header-contents-face ((,class (:foreground ,smyx-green))))
+   `(wl-highlight-message-headers-face ((,class (:foreground ,smyx-red+1))))
+   `(wl-highlight-message-important-header-contents ((,class (:foreground ,smyx-green+2))))
+   `(wl-highlight-message-header-contents ((,class (:foreground ,smyx-green+1))))
+   `(wl-highlight-message-important-header-contents2 ((,class (:foreground ,smyx-green+2))))
+   `(wl-highlight-message-signature ((,class (:foreground ,smyx-green))))
+   `(wl-highlight-message-unimportant-header-contents ((,class (:foreground ,smyx-fg))))
+   `(wl-highlight-summary-answered-face ((,class (:foreground ,smyx-blue))))
+   `(wl-highlight-summary-disposed-face ((,class (:foreground ,smyx-fg
+                                                              :slant italic))))
+   `(wl-highlight-summary-new-face ((,class (:foreground ,smyx-blue))))
+   `(wl-highlight-summary-normal-face ((,class (:foreground ,smyx-fg))))
+   `(wl-highlight-summary-thread-top-face ((,class (:foreground ,smyx-yellow))))
+   `(wl-highlight-thread-indent-face ((,class (:foreground ,smyx-magenta))))
+   `(wl-highlight-summary-refiled-face ((,class (:foreground ,smyx-fg))))
+   `(wl-highlight-summary-displaying-face ((,class (:underline t :weight bold))))
 
    ;; which-func-mode
    `(which-func ((,class (:foreground ,smyx-green+4))))
