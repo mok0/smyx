@@ -266,27 +266,26 @@
 
    `(gui-element ((,class (:background ,smyx-gray-5 :foreground ,smyx-blue-6))))
 
-
    ;;; newsticker
    ;; These are currently placeholders that probably look terrible.
    ;; Someone who uses newsticker is welcome to change these
-   ;; `(newsticker-date-face ((,class (:foreground ,smyx-fg))))
-   ;; `(newsticker-default-face ((,class (:foreground ,smyx-fg))))
-   ;; `(newsticker-enclosure-face ((,class (:foreground ,smyx-green+3))))
-   ;; `(newsticker-extra-face ((,class (:foreground ,smyx-bg+2 :height 0.8))))
-   ;; `(newsticker-feed-face ((,class (:foreground ,smyx-fg))))
-   ;; `(newsticker-immortal-item-face ((,class (:foreground ,smyx-green))))
-   ;; `(newsticker-new-item-face ((,class (:foreground ,smyx-blue))))
-   ;; `(newsticker-obsolete-item-face ((,class (:foreground ,smyx-red))))
-   ;; `(newsticker-old-item-face ((,class (:foreground ,smyx-bg+3))))
-   ;; `(newsticker-statistics-face ((,class (:foreground ,smyx-fg))))
-   ;; `(newsticker-treeview-face ((,class (:foreground ,smyx-fg))))
-   ;; `(newsticker-treeview-immortal-face ((,class (:foreground ,smyx-green))))
-   ;; `(newsticker-treeview-listwindow-face ((,class (:foreground ,smyx-fg))))
-   ;; `(newsticker-treeview-new-face ((,class (:foreground ,smyx-blue :weight bold))))
-   ;; `(newsticker-treeview-obsolete-face ((,class (:foreground ,smyx-red))))
-   ;; `(newsticker-treeview-old-face ((,class (:foreground ,smyx-bg+3))))
-   ;; `(newsticker-treeview-selection-face ((,class (:foreground ,smyx-yellow))))
+   `(newsticker-date-face ((,class (:foreground ,smyx-fg))))
+   `(newsticker-default-face ((,class (:foreground ,smyx-fg))))
+   `(newsticker-enclosure-face ((,class (:foreground ,smyx-green+3))))
+   `(newsticker-extra-face ((,class (:foreground ,smyx-bg+2 :height 0.8))))
+   `(newsticker-feed-face ((,class (:foreground ,smyx-fg))))
+   `(newsticker-immortal-item-face ((,class (:foreground ,smyx-green))))
+   `(newsticker-new-item-face ((,class (:foreground ,smyx-blue))))
+   `(newsticker-obsolete-item-face ((,class (:foreground ,smyx-red))))
+   `(newsticker-old-item-face ((,class (:foreground ,smyx-bg+3))))
+   `(newsticker-statistics-face ((,class (:foreground ,smyx-fg))))
+   `(newsticker-treeview-face ((,class (:foreground ,smyx-fg))))
+   `(newsticker-treeview-immortal-face ((,class (:foreground ,smyx-green))))
+   `(newsticker-treeview-listwindow-face ((,class (:foreground ,smyx-fg))))
+   `(newsticker-treeview-new-face ((,class (:foreground ,smyx-blue :weight bold))))
+   `(newsticker-treeview-obsolete-face ((,class (:foreground ,smyx-red))))
+   `(newsticker-treeview-old-face ((,class (:foreground ,smyx-bg+3))))
+   `(newsticker-treeview-selection-face ((,class (:foreground ,smyx-yellow))))
 
    ;;; external
 
