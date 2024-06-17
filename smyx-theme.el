@@ -53,7 +53,8 @@
       ;; (mok-dark-green "#26a644")
 
       ;; mok-highligt is the highligt line in the minibuffer
-      (mok-highlight "#c55800")  ;; orangish
+      ;; (mok-highlight "#c55800")  ;; orangish
+      (mok-highlight "#5f9ea0")  ;; CadetBlue
       (mok-gray "#666666")
 
       ;;(mok-org-block "#054260")     ;; prussian blue darkened
