@@ -41,7 +41,6 @@
 
 (let ((class '((class color) (min-colors 89)))
 
-
       (mok-rainbow1 "#ff3b30") ;; red
       (mok-rainbow2 "#0beae3") ;; cyan
       (mok-rainbow3 "#f58b0c") ;; darkorange
@@ -85,7 +84,8 @@
 
       (smyx-bg-05 "#151515")
       (smyx-bg-1 "#202020")
-      (smyx-bg "#282828")
+      ;;(smyx-bg "#282828")
+      (smyx-bg "#060606")
       (smyx-bg+1 "#383838")
       (smyx-bg+2 "#484848")
       (smyx-bg+3 "#585858")
@@ -122,8 +122,6 @@
       (smyx-green+3 "#afd8af")
       (smyx-green+4 "#bfebbf")
       (smyx-green-blue-org "#BBFFD1")
-
-      (blue )
 
       (smyx-cyan "#96D9F1")
       (smyx-blue+1 "#94bff3")
