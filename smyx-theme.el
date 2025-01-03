@@ -62,6 +62,8 @@
       (mok-modeline-active "#2c6c12")
       (mok-modeline-inactive "#333344")
 
+      (mok-linum-bg "#111111")
+
       (mok-tab-bar-active "#2c6c12")
       (mok-tab-bar-active-foreground "#96d9f1")
       (mok-tab-bar-inactive "#064e70")
@@ -82,10 +84,10 @@
       ;; smyx palette
       (smyx-fg "#F7F7F7")
 
-      (smyx-bg-05 "#151515")
-      (smyx-bg-1 "#202020")
       ;;(smyx-bg "#282828")
       (smyx-bg "#060606")
+      (smyx-bg-05 "#151515")
+      (smyx-bg-1 "#202020")
       (smyx-bg+1 "#383838")
       (smyx-bg+2 "#484848")
       (smyx-bg+3 "#585858")
@@ -124,6 +126,7 @@
       (smyx-green-blue-org "#BBFFD1")
 
       (smyx-cyan "#96D9F1")
+
       (smyx-blue+1 "#94bff3")
       (smyx-blue "#96D9F1")
       (smyx-blue-1 "#7b68ee")
@@ -167,7 +170,7 @@
    `(buffers-tab ((,class (:background ,mok-gray :foreground ,smyx-white-2))))
 
    ;;; basic coloring
-   `(default ((,class (:foreground ,smyx-fg :background ,smyx-black))))
+   `(default ((,class (:foreground ,smyx-fg :background ,smyx-bg))))
    `(cursor ((,class (:background ,smyx-fg))))
    `(escape-glyph-face ((,class (:foreground ,smyx-red))))
    ;; `(fringe ((,class (:foreground ,smyx-fg :background ,smyx-bg+1))))
@@ -180,8 +183,7 @@
    `(hl-line ((,class (:background ,mok-hl-line))))  ;; was smyx-bg+2
 
    ;; line-number
-   `(line-number ((,class (:foreground ,smyx-gray-9 :background ,smyx-bg))))
-
+   `(line-number ((,class (:foreground ,smyx-gray-9 :background ,mok-linum-bg))))
 
    ;;; compilation
    `(compilation-column-face ((,class (:foreground ,smyx-blue))))
@@ -517,7 +519,7 @@
    ;; `(jabber-title-large ((,class (:height 1.3 :weight bold))))
 
    ;; linum-mode
-   `(linum ((,class (:foreground ,smyx-gray-9 :background ,smyx-bg))))
+   `(linum ((,class (:foreground ,smyx-gray-9 :background ,mok-linum-bg))))
 
    ;; magit
    `(magit-section-title ((,class (:foreground ,smyx-green))))
