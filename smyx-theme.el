@@ -246,9 +246,9 @@
    ;;; font lock
    `(font-lock-builtin-face ((,class (:foreground ,smyx-orange))))
    `(font-lock-comment-face ((,class (:foreground ,smyx-gray-9 :italic t))))
-   ;; `(font-lock-comment-delimiter-face ((,class (:foreground ,smyx-green))))
+   `(font-lock-comment-delimiter-face ((,class (:foreground ,smyx-gray-9))))
    `(font-lock-constant-face ((,class (:foreground ,smyx-red))))
-   ;; `(font-lock-doc-face ((,class (:foreground ,smyx-green+0))))
+   `(font-lock-doc-face ((,class (:foreground ,smyx-gray-9))))
    `(font-lock-doc-string-face ((,class (:foreground ,smyx-yellow))))
    `(font-lock-function-name-face ((,class (:foreground ,smyx-blue))))
    `(font-lock-keyword-face ((,class (:foreground ,smyx-green))))
